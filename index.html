@@ -26,6 +26,17 @@
             padding-left: 0;
             padding-right: 0;
         }
+
+        .row.no-gutter {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .row.no-gutter [class*='col-']{
+            padding-right: 0;
+            padding-left: 0;
+        }
+
         .banner {
             min-height: 50vh;
             background: url("assets/img/banner.png");
@@ -33,12 +44,93 @@
             background-position-x: 40%;
         }
 
+        .smallShow {
+            display: none;
+        }
+
+        .smallNoShow {
+            display: block;
+        }
+
+        @media (max-width: 767px) {
+            .smallNoShow {
+                display: none;
+            }
+            .smallShow {
+                display: block;
+            }
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        @keyframes btnvideo {
+            from {
+                -ms-transform: scale(1, 1);
+                -webkit-transform: scale(1, 1);
+                transform: scale(1, 1)
+            }
+            to {
+                -ms-transform: scale(1.05, 1.05);
+                -webkit-transform: scale(1.05, 1.05);
+                transform: scale(1.05, 1.05)
+            }
+        }
+
+        @-webkit-keyframes btnvideo {
+            from {
+                -ms-transform: scale(1, 1);
+                -webkit-transform: scale(1, 1);
+                transform: scale(1, 1)
+            }
+            to {
+                -ms-transform: scale(1.05, 1.05);
+                -webkit-transform: scale(1.05, 1.05);
+                transform: scale(1.05, 1.05)
+            }
+        }
+
+        .icon-video {
+            width: 10vh;
+            height: 10vh;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -khtml-border-radius: 50%;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            background: rgba(0, 0, 0, .1);
+            animation: btnvideo .5s infinite alternate;
+            -webkit-animation: btnvideo .5s infinite alternate;
+            -webkit-transition: all .2s ease-out;
+            -moz-transition: all .2s ease-out;
+            -ms-transition: all .2s ease-out;
+            -o-transition: all .2s ease-out;
+        }
+
+        .icon-video:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            right: 50%;
+            margin-right: -33px;
+            width: 0;
+            height: 0;
+            border-bottom: 25px solid transparent;
+            border-top: 25px solid transparent;
+            border-left: 50px solid #fff
+        }
+
+        .icon-video:hover {
+            background: rgba(0, 0, 0, .3)
+        }
     </style>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row justify-content-lg-center">
-        <div class="col-12 col-lg-10 noPadding">
+<div class="container-fluid noPadding">
+    <div class="row no-gutter justify-content-lg-center">
+        <div class="col-12 col-lg-10">
             <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -67,10 +159,38 @@
             </nav>
         </div>
     </div>
-    <div class="row justify-content-lg-center">
-        <div class="col-12 col-lg-10 noPadding">
-            <div class="banner">
-
+    <div class="row no-gutter justify-content-lg-center align-content-lg-center">
+        <div class="col-12 col-lg-10">
+            <div class="smallNoShow">
+                <div class="row no-gutter banner">
+                    <div class="col-md-8 col-12 justify-content-center align-items-center flex">
+                        <a href="javascript:void(0)" class="icon-video"
+                           data-youtube="https://www.youtube.com/embed/oSZsEnsR71U?rel=0&amp;controls=0&amp;autoplay=1"></a>
+                    </div>
+                    <div class="smallNoShow text-white col-md-4 justify-content-center align-items-center flex">
+                       <div class="text-center">
+                           <h1 class="text-white">QUẢN LÍ ĐƠN HÀNG CÙNG tinyPOS</h1>
+                           <p>Quản lí đơn hàng theo bàn
+                               Cập nhật trạng thái bàn
+                               Đồng bộ đơn hàng trực tiếp xuống bếp
+                               Cập nhât trạng thái món ăn
+                               In hóa đơn
+                               Quản lí doanh số theo ngày/ tháng
+                           </p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smallShow">
+                <div class="banner justify-content-center align-items-center flex">
+                    <div class="text-center">
+                        <h1 class="text-white">QUẢN LÍ ĐƠN HÀNG CÙNG tinyPOS</h1>
+                        <div class="col justify-content-center align-items-center flex">
+                            <a href="javascript:void(0)" class="icon-video"
+                               data-youtube="https://www.youtube.com/embed/oSZsEnsR71U?rel=0&amp;controls=0&amp;autoplay=1"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
